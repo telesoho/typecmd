@@ -1,17 +1,19 @@
 [tool.poetry]
 name = "typecmd"
-version = "0.1.0"
-description = "Test for typer"
+version = "1.0.0"
+description = "Command toolset used in my work"
 authors = ["telesoho <telesoho@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-typecmd = "typecmd.commands:app"
+yaml2json = "typecmd.yaml2json:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 typer = {extras = ["all"], version = "^0.7.0"}
 pipx = "^1.2.0"
+pyyaml = "^6.0"
+python-dateutil = "^2.8.2"
 
 
 [tool.poetry.group.dev.dependencies]
