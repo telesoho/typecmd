@@ -12,7 +12,11 @@ def timestamp_constructor(loader, node):
 yaml.add_constructor(u'tag:yaml.org,2002:timestamp', timestamp_constructor)
 
 @app.command()
-def yaml2json(yamlfile: typer.FileText, output: typer.FileTextWrite = typer.Option(None), pretty: bool = True):
+def yaml2json(yamlfile: typer.FileText, 
+              output: typer.FileTextWrite = typer.Option(default=None,help="Output file name, If not specifed it will output to stdout"), 
+              pretty: bool = typer.Option(default=True, help="Output in pretty format or compressed format.")):
+    """Transform yaml file to json.
+    """
     if output:
         if pretty:
             json.dump(
